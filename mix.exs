@@ -17,6 +17,9 @@ defmodule LHeap.Mixfile do
   end
 
   defp deps do
-    []
+    [
+      {:excheck, "~> 0.5", only: :test},
+      {:triq, github: "triqng/triq", only: :test}
+    ]
   end
 end
