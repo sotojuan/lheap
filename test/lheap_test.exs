@@ -1,6 +1,7 @@
 defmodule LHeapTest do
   use ExUnit.Case, async: true
   use ExCheck
+  doctest LHeap
 
   def length_right_spine({}), do: 0
   def length_right_spine({_, _, r}), do: 1 + length_right_spine(r)
