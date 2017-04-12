@@ -9,7 +9,7 @@ In your `mix.exs`:
 ```elixir
 defp deps do
   [
-    {:lheap, "~> 0.0.0"}
+    {:lheap, "~> 1.0.0"}
   ]
 end
 ```
