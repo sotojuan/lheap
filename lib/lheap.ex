@@ -107,10 +107,10 @@ defmodule LHeap do
       iex> LHeap.merge(heap1, heap2) |> LHeap.sort()
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   """
-  def sort(h), do: sort(h, [])
-  defp sort(@empty, mins), do: mins |> Enum.reverse()
-  defp sort(h, mins) do
-    sort(remove_min(h), [min(h) | mins])
+  def sort(heap), do: sort(heap, [])
+  defp sort(@empty, sorted), do: sorted |> Enum.reverse()
+  defp sort(heap, sorted) do
+    sort(remove_min(heap), [min(heap) | sorted])
   end
 
   defp s_val(@empty), do: 0
