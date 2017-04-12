@@ -2,6 +2,9 @@ defmodule LHeapTest do
   use ExUnit.Case, async: true
   use ExCheck
 
+  def length_right_spine({}), do: 0
+  def length_right_spine({_, _, r}), do: 1 + length_right_spine(r)
+
   property "create new heap with sort" do
     for_all xs in list(int()) do
       heap = LHeap.new(xs)
@@ -13,7 +16,7 @@ defmodule LHeapTest do
   property "put and length of right spine" do
     for_all xs in list(int()) do
       heap = LHeap.new(xs)
-      spine_length = LHeap.length_right_spine(heap)
+      spine_length = length_right_spine(heap)
 
       max_spine_length = :math.log2(length(xs) + 1)
       spine_length <= max_spine_length

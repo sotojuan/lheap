@@ -51,7 +51,4 @@ defmodule LHeap do
         {{s_val(l) + 1, v}, r, l}
     end
   end
-
-  def length_right_spine(@empty), do: 0
-  def length_right_spine({_, _, r}), do: 1 + length_right_spine(r)
 end
